@@ -10,6 +10,7 @@ import { CartContext } from "@/components/CartContext";
 import CartIcon from "@/components/icons/CartIcon";
 import FlyingButton from 'react-flying-item'
 import { FlyingButtonWrapper } from "@/components/ProductBox";
+import { ThemeContext } from "@/components/ThemeContext";
 
 export const ContentHolder = styled.div`
   padding: 10px 0 20px 0;
@@ -55,7 +56,8 @@ export const PriceRow = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #4B0082;
+  color: green;
+  font-weight: 600;
 `;
 
 export const Price = styled.span`
@@ -66,8 +68,8 @@ export const Price = styled.span`
 const StyledTitle = styled.div`
   font-size: 20px;
   font-weight: bold;
-  font-weight: 600;
-  color: #4B0082;
+  font-weight: 800;
+  color: black;
 `;
 
 const StyledP = styled.p`
@@ -76,44 +78,49 @@ const StyledP = styled.p`
 
 export default function ProductPage({product}) {
   const {addProduct} = useContext(CartContext);
+  const {colorTheme} = useContext(ThemeContext);
+
   return (
     <>
       <Header />
-      <ContentHolder>
-        <Center>
-          <ColWrapper>
-            <Box>
-              <ProductImages images={product.images} />
-            </Box>
-            <Box>
-              <StyledTitle>{product.title}</StyledTitle>
-              <StyledP>{product.description}</StyledP>
-              <PriceRow>
-                <Price>Ksh{product.price}</Price>
-                <FlyingButtonWrapper 
-                  onClick={() => addProduct(product._id)}
-                >
-                  <FlyingButton
-                    src={product.images[0]} 
-                    targetTop={'5%'} 
-                    targetLeft={'95%'}
-                    flyingItemStyling={{
-                      maxWidth: '80px',
-                      maxWidth: '80px',
-                      width: 'auto',
-                      height: 'auto',
-                    }}
-                  >
-                    <CartIcon />
-                    Add to cart
-                  </FlyingButton>
-                </FlyingButtonWrapper>   
-              </PriceRow>
-            </Box>           
-          </ColWrapper>      
-        </Center>
-      </ContentHolder>
-      
+      <div className="new-theme-options">
+        <div id={colorTheme} className="height-sizing">
+          <ContentHolder>
+            <Center>
+              <ColWrapper>
+                <Box>
+                  <ProductImages images={product.images} />
+                </Box>
+                <Box>
+                  <StyledTitle>{product.title}</StyledTitle>
+                  <StyledP>{product.description}</StyledP>
+                  <PriceRow>
+                    <Price>Ksh{product.price}</Price>
+                    <FlyingButtonWrapper 
+                      onClick={() => addProduct(product._id)}
+                    >
+                      <FlyingButton
+                        src={product.images[0]} 
+                        targetTop={'5%'} 
+                        targetLeft={'95%'}
+                        flyingItemStyling={{
+                          maxWidth: '80px',
+                          maxWidth: '80px',
+                          width: 'auto',
+                          height: 'auto',
+                        }}
+                      >
+                        <CartIcon />
+                        Add to cart
+                      </FlyingButton>
+                    </FlyingButtonWrapper>   
+                  </PriceRow>
+                </Box>           
+              </ColWrapper>      
+            </Center>
+          </ContentHolder>
+        </div>
+      </div>   
     </>
   )
 }

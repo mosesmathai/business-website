@@ -9,7 +9,7 @@ import FlyingButton from 'react-flying-item'
 const Bg = styled.div`
   padding: 5px 0 0 0;
   @media screen and (min-width: 768px) {
-    padding: 30px 0 20px 0;
+    margin: 10px 0 20px 0;
   }
 `;
 
@@ -114,6 +114,7 @@ export const StyledImage = styled.img`
 const FeaturedWrapper = styled.div`
   margin-bottom: 10px;
 `;
+
 
 export default function FeaturedComp({product}) {
   const {addProduct} = useContext(CartContext);
