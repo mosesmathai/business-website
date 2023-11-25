@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Juja Shop</title>
+        <title>Business Website</title>
       </Head>
       <CartContextProvider>
         <ThemeContextProvider>
