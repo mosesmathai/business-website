@@ -21,7 +21,7 @@ const FormWrapper = styled.div`
   width: 90%;
   border: 3px solid #aaa;
   border-radius: 10px;
-  margin-top: 10px;
+  padding-top: 10px;
   @media screen and (min-width: 768px) {
     width: 50%;
   }
@@ -102,7 +102,7 @@ export default function Inquiries() {
     return (
       <div className='new-theme-options'>
         <Header />
-        <div id={colorTheme}>
+        <div id={colorTheme} className='height-sizing'>
           <Center>
             <FormWrapper>
               <MessageWrapper>
