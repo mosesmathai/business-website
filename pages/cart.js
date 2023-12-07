@@ -16,6 +16,11 @@ import { useRouter } from 'next/navigation';
 import { ThemeContext } from '@/components/ThemeContext';
 
 
+    // https://payment.intasend.com/api/v1/checkout/
+    // https://sandbox.intasend.com/api/v1/checkout/
+    // ISPubKey_live_ced55dd6-5b04-490a-8437-4807203e1d3f
+    // https://shop-web-eta.vercel.app/
+
 export const ColumnsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -147,17 +152,18 @@ const ResetBtn = styled.button`
   border: none;
   background-color: red;
   padding: 5px 10px;
-  opacity: 0.5;
   border-radius: 3px;
   cursor: pointer;
-  &:hover {
-    opacity: 1;
-  }
 `;
 
 export const StyledWarning = styled.div`
   color: red;
 `
+
+const StyledResetNew = styled.div`
+  background-color: green;
+  color: white;
+`;
 
 export default function CartPage() {
   const {cartProducts,addProduct,removeProduct,clearCart} = useContext(CartContext);
@@ -188,11 +194,6 @@ export default function CartPage() {
   const payHandler = (event) => {
     event.preventDefault()
     setButtonText('Processing')
-    // https://payment.intasend.com/api/v1/checkout/
-    // https://sandbox.intasend.com/api/v1/checkout/
-    // ISPubKey_live_ced55dd6-5b04-490a-8437-4807203e1d3f
-    // https://shop-web-eta.vercel.app/
-
     Axios.post('https://payment.intasend.com/api/v1/checkout/', {
       public_key: 'ISPubKey_live_ced55dd6-5b04-490a-8437-4807203e1d3f',
       first_name: firstName,
@@ -284,9 +285,10 @@ export default function CartPage() {
                 )}
                 {!loadingProducts && (
                   <div>
-                    <ResetBtn onClick={resetCart}>Reset Cart</ResetBtn>
+                   
                     {products?.length > 0 && (
                       <Table>
+                         <ResetBtn onClick={resetCart}>Reset Cart</ResetBtn>
                         <thead>
                           <tr>
                             <th>Product</th>

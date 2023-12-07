@@ -29,28 +29,7 @@ const Wrapper = styled.div`
   
 `;
 
-const StyledNav = styled.nav`
-  ${props => props.mobileNavActive ? `
-    display: block;    
-  ` : `
-    display: none;  
-  `}
-  z-index: -20; 
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 95px 20px 20px 25px;
-  background: black;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    position: static;
-    background: transparent;
-    padding: 20px 0;
-    gap: 10px; 
-  }
-`;
+
 
 const LogoTag = styled.div`
   margin: 5px 0 0 0; 
@@ -174,6 +153,28 @@ const LogoSearchWrapper = styled.div`
   justify-content: space-between;
 `;
 
+const StyledNav = styled.nav`
+  ${props => props.mobileNavActive ? `
+    display: block;    
+  ` : `
+    display: none;  
+  `}
+  z-index: -20; 
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 65px 20px 20px 25px;
+  background: black;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    position: static;
+    background: transparent;
+    padding: 20px 0;
+    gap: 10px; 
+  }
+`;
 
 export default function Header() {
   const {cartProducts} = useContext(CartContext);

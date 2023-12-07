@@ -41,11 +41,7 @@ body {
     }
     border: 1px solid #fff;
     display: inline-block;
-    opacity: 0.5;
     text-align: right;
-    &.active {
-      opacity: 1;
-    }
   }
   p {
     text-align: left;
