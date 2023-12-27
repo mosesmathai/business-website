@@ -43,6 +43,18 @@ const Title = styled(Link)`
   border-width: 0 0 2px 0;
   border-color: #aaa;
 `;
+const NewTitle = styled(Link)`
+  font-weight: 300;
+  font-size: 12px;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap;
+  font-family: Verdana;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: #aaa;
+`;
 
 const ProductInfoBox = styled.div`
   display: flex;
@@ -81,6 +93,11 @@ export const FlyingButtonWrapper = styled.div`
   }
 `;
 
+const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export default function ProductBox({_id,title,description,price,images}) {
   const {addProduct} = useContext(CartContext);
   const url = '/product/'+_id
@@ -93,7 +110,10 @@ export default function ProductBox({_id,title,description,price,images}) {
       </WhiteBox>
       <ProductInfoBox>
         <div>
-          <Title href={url}>{title}</Title>
+          <TitleWrapper>
+            <Title href={url}>{title}</Title>
+            <NewTitle href={url}>View all images</NewTitle>
+          </TitleWrapper>
           <PriceRow>
             Ksh{price}  
           </PriceRow> 
