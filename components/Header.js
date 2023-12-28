@@ -59,12 +59,12 @@ const CartNumberSpacing = styled.div`
 
 const NavLink = styled(Link)`
   text-decoration: none;
-  color: silver;
+  color: white;
   &:hover {
-    color: white;
+    color: silver;
   }
   &:active {
-    color: silver;
+    color: white;
   }
   svg {
     height: 20px;

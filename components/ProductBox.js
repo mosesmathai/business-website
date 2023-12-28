@@ -98,7 +98,7 @@ const TitleWrapper = styled.div`
   flex-direction: column;
 `;
 
-export default function ProductBox({_id,title,description,price,images}) {
+export default function ProductBox({_id,title,price,images}) {
   const {addProduct} = useContext(CartContext);
   const url = '/product/'+_id
   return (

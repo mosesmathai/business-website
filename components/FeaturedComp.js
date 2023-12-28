@@ -24,7 +24,7 @@ const Title = styled.h1`
 `;
 
 const Desc = styled.p`
-  color: silver;
+  color: white;
   font-size: .9rem;
   margin: 5px 0 0 0;
 `;
