@@ -112,7 +112,7 @@ export default function ProductBox({_id,title,price,images}) {
         <div>
           <TitleWrapper>
             <Title href={url}>{title}</Title>
-            <NewTitle href={url}>View all images</NewTitle>
+            <NewTitle href={url}>View more details</NewTitle>
           </TitleWrapper>
           <PriceRow>
             Ksh{price}  
