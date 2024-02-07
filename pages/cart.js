@@ -209,7 +209,6 @@ export default function CartPage() {
         submitOrder();
         handleEmailNotification();
         clearCart();
-        console.log(res);
       })
       .catch((error) => {
         console.log(error);

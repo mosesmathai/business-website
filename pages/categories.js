@@ -58,7 +58,7 @@ const StyledHeading = styled.h2`
 
 export const CatTitle = styled.h1`
   font-family: Verdana;
-  color: white;
+  color: black;
   margin: 0 0 0 19px;
   padding-top: 5px;
   font-size: 26px;
