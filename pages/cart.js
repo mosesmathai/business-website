@@ -375,15 +375,16 @@ export default function CartPage() {
                       name='phone'
                       id='phone' 
                     /> 
-                    <StyledLabel htmlFor="location">Delivery Point &#42;</StyledLabel>
-                    <StyledSelect id='location' value={location} onChange={ev => setLocation(ev.target.value)}>
-                      <option value="">Select</option>
-                      <option value="I will pick it up">I will pick it at the shop</option>
-                      <option value="Within Juja">Within Juja</option>
-                      <option value="Super Metro Station Nairobi CBD">Super Metro Station, Nairobi CBD</option>
-                    </StyledSelect> 
-                  
-      
+
+                    <StyledLabel htmlFor="location">Where should we deliver your package? &#42;</StyledLabel>
+                    <Input
+                      onChange={(e) => setLocation(e.target.value)}
+                      placeholder="Location"
+                      value={location}
+                      name='location'
+                      id='location' 
+                    /> 
+
                     <PaymentBtn
                       type="submit"
                       disabled={amount && firstName && lastName ? false : true}   
